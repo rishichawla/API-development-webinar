@@ -1,9 +1,11 @@
 To be covered (tentative):
 
-    What is API? -> Slides
-    What is Microservice Architecture -> Slides
+    Microservice Architecture -> Slides
+    API? -> Slides
+    API Terminology -> Slides
 
-    Hello World API -> Flask
+    Hello World -> Flask
+    
     Render Template -> Flask
 
     Example API -> Flask
