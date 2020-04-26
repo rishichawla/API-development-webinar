@@ -1,0 +1,33 @@
+To be covered (tentative):
+
+    What is API? -> Slides
+    What is Microservice Architecture -> Slides
+
+    Hello World API -> Flask
+    Render Template -> Flask
+
+    Example API -> Flask
+    Consume API -> React
+    Consume API -> Python
+
+    Rest API Structure -> Slides
+    Common Headers -> Slides
+
+    Parse header -> Flask
+    Send header -> React
+    Send header -> Python
+
+    Docker -> Slides
+    Flask in Docker -> Demo
+    Database in Docker -> Demo
+
+    Login -> Slides
+    Login -> Flask
+    Login -> React
+
+    Some common login methods -> Slides
+
+    Middleware -> Slides
+    Middleware example -> Django/golang
+
+    Decorators in Flask (as per the time)
