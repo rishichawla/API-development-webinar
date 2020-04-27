@@ -1,17 +1,16 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import json
 
 app = Flask(__name__)
 
 def generateUsers(n):
-    from random_username.generate import generate_username
+    from randomuser import RandomUser
     
     users = {"abc": "123"}
-    temp = generate_username(2 * n)
-    i = 0
-    while (i != n):
-        users[temp[i]] = temp[9 - i]
-        i += 1
+    temp = RandomUser.generate_users(5)
+
+    for user in temp:
+        users[user.get_username()] = user.get_password()
 
     with open('users.json', 'w') as outfile:
         json.dump(users, outfile, indent=2)
@@ -35,6 +34,7 @@ def login():
         if checkLogin(request.form['username'], request.form['pass']):
             return render_template('welcome.html', name = request.form['username'])
     return render_template('index.html')
+
 
 if __name__ == '__main__':
     generateUsers(5)

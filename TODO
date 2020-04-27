@@ -8,6 +8,8 @@ To be covered (tentative):
     
     Render Template -> Flask
 
+    Dockerize this Flask app
+
     Example API -> Flask
     Consume API -> React
     Consume API -> Python
