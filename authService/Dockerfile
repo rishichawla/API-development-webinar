@@ -12,4 +12,4 @@ EXPOSE 5000
 
 ENTRYPOINT ["python3"]
 
-CMD ["hello_world.py"]
+CMD ["authService.py"]

@@ -10,9 +10,10 @@ To be covered (tentative):
 
     Dockerize this Flask app
 
+    Consume API -> Python
+
     Example API -> Flask
     Consume API -> React
-    Consume API -> Python
 
     Rest API Structure -> Slides
     Common Headers -> Slides

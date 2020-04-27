@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 import json
 
 app = Flask(__name__)
@@ -32,7 +32,7 @@ def main():
 def login():
     if request.method == "POST":
         if checkLogin(request.form['username'], request.form['pass']):
-            return render_template('welcome.html', name = request.form['username'])
+            return redirect('http://localhost:5001/')
     return render_template('index.html')
 
 

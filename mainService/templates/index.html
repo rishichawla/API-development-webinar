@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <title>Data</title>
+</head>
+<style>
+.chart {
+    width: 400px;
+    height: 400px;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2%;
+    borderWidth: 1px;
+    background-color: #99e6ff;
+}
+
+</style>
+
+<body>
+    <div id="charts" style="width: 100vw">
+
+    </div>
+
+    <script>
+        var charts = document.getElementById('charts')
+        
+        {% for country in countries if country.TotalConfirmed != 0%}
+            charts.innerHTML = charts.innerHTML +
+            `<div class='chart'>
+                <canvas id="charts_{{country.CountryCode}}"> </canvas>
+                <center> <h3> {{country.Country}} </h3> </center>
+            </div>`
+
+        {% endfor %}
+
+        {% for country in countries if country.TotalConfirmed != 0%}
+         var ctx = document.getElementById('charts_{{country.CountryCode}}').getContext('2d');
+         ctx.canvas.width = 300;
+ctx.canvas.height = 300;
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    datasets: [{
+                        label: 'Number of people recovered',
+                        data: [{{country.TotalConfirmed - country.TotalRecovered}}, {{country.TotalRecovered}}],
+                        backgroundColor: ['#ff0000', '#00ff00']
+                    }],
+                    labels: ['Red', 'Green'],
+                    borderWidth: 1
+                },
+                options: {
+                    responsive:true,
+                    maintainAspectRatio: false
+                }
+            })
+        {% endfor %}
+
+    </script>
+
+</body>
+
+</html>
