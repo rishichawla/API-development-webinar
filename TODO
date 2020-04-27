@@ -8,12 +8,10 @@ To be covered (tentative):
     
     Render Template -> Flask
 
+    Docker -> Slides
     Dockerize this Flask app
 
     Consume API -> Python
-
-    Example API -> Flask
-    Consume API -> React
 
     Rest API Structure -> Slides
     Common Headers -> Slides
@@ -22,13 +20,9 @@ To be covered (tentative):
     Send header -> React
     Send header -> Python
 
-    Docker -> Slides
-    Flask in Docker -> Demo
     Database in Docker -> Demo
 
-    Login -> Slides
     Login -> Flask
-    Login -> React
 
     Some common login methods -> Slides
 
