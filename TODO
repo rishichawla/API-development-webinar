@@ -16,17 +16,11 @@ To be covered (tentative):
     Rest API Structure -> Slides
     Common Headers -> Slides
 
-    Parse header -> Flask
-    Send header -> React
-    Send header -> Python
-
     Database in Docker -> Demo
+    Login via database -> Flask
+    Connect containers in docker
 
-    Login -> Flask
-
-    Some common login methods -> Slides
+    GET and POST request -> Flask
 
     Middleware -> Slides
     Middleware example -> Django/golang
-
-    Decorators in Flask (as per the time)

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Data</title>
 </head>
 <style>
@@ -22,6 +23,27 @@
 </style>
 
 <body>
+
+    <form action={{url_for('getCountryStats')}} method="GET">
+        <div class="form-row align-items-center">
+            <div class="col-auto my-1">
+            <label class="mr-sm-2 sr-only" for="country">Preference</label>
+            <select class="custom-select mr-sm-2" name="country" id='country'>
+                <option >Choose...</option>
+                <option value="india">India</option>
+                <option value="canada">Canada</option>
+                <option value="china">China</option>
+                <option value="portugal">Portugal</option>
+                <option value="spain">Spain</option>
+                <option value="germany">Germany</option>
+            </select>
+            </div>
+            <div class="col-auto my-1">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </>
+        </div>
+    </form>
+
     <div id="charts" style="width: 100vw">
 
     </div>
@@ -39,9 +61,10 @@
         {% endfor %}
 
         {% for country in countries if country.TotalConfirmed != 0%}
-         var ctx = document.getElementById('charts_{{country.CountryCode}}').getContext('2d');
-         ctx.canvas.width = 300;
-ctx.canvas.height = 300;
+            var ctx = document.getElementById('charts_{{country.CountryCode}}').getContext('2d');
+            ctx.canvas.width = 300;
+            ctx.canvas.height = 300;
+            
             var myChart = new Chart(ctx, {
                 type: 'pie',
                 data: {
@@ -59,9 +82,7 @@ ctx.canvas.height = 300;
                 }
             })
         {% endfor %}
-
     </script>
-
 </body>
 
 </html>
